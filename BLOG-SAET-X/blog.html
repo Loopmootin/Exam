@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I sammenhæng med Kommunalvalg 2017 - Denne side er til at hjælpe unge, med at finde ud af hvor de skal sætte deres kryds til kommunalvalget 2017">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>#sætX</title>
+<link href="css/style.css" rel="stylesheet">
+
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="animation3.js?1495277407414"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	handleComplete();
+}
+function handleComplete() {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	exportRoot = new lib.animation3();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;		
+		}
+	}
+	makeResponsive(false,'both',false,1);	
+	fnStartAnimation();
+}
+</script>
+</head>
+
+<body onload="init();">
+	<div class="grid grid-pad">
+		<div class="col-1-1">
+			<div class="nav1">
+				<a href="index.html"><img id="logo" alt="#sætX" src="img/logo1.png"></a>
+				<a href="index.html">Forside</a>
+				<a href="test.php">Test dig selv</a>
+				<a href="bibliotek.html">#sætX bibliotek</a>
+				<a href="kampagner.html">Kampagner</a>
+				<a class="selected" href="blog.html">Blog</a>
+				<a href="debat.html">Debat</a>
+				<a href="om-kontakt.html">Om og kontakt</a>
+				<input placeholder="Søg...">
+				<a href="https://www.instagram.com/saetx17/"><img id="ig" src="img/icon/insta.png" alt="instagram"></a>
+				<a href="https://www.facebook.com/saetx17/"><img id="fb" src="img/icon/fb.png" alt="facebook"></a>	
+			</div>
+		</div>
+		<div class="col-1-1" id="mest-pop"><h2>Mest populære</h2></div>
+		<div class="col-6-12">
+			<div class="box1">
+			<h2>De sjoveste <br> (og mest latterlige) partinavne</h2>
+			<p>Vidste du, at du i 2013 kunne stemme på partiet Liste P.I.K, hvis motto lød; "stem med dit lem"?<br><br> <b>Happy voting (y)</b></p></div>
+		</div>
+				
+		<div class="col-3-12"><div class="box-a-blog"><p>?</p></div></div>
+		<div class="col-3-12"><div class="box-b-blog"><img alt="meme" src="img/memes/nailed-it.png" height="195"></div></div>
+		<div class="col-3-12"><div class="box-c-blog"><img alt="meme" src="img/memes/meme4.jpg" height="195"></div></div>
+		<div class="col-3-12"><div class="box-d-blog"><p>Sofavælger?<br> Definition: "Jeg vælger at date min sofa resten af mit liv frem for at tage stilling til noget som helst i samfundet ;-)"</p></div></div>
+		
+		<div class="col-1-1"><h2><br>Alle blogopslag</h2></div>
+		
+		<div class="col-9-12">	
+			<div class="col-4-12">
+				<div id="blog1" class="opslag"><h3>Jeg vil gerne stemme, men jeg HADER valg</h3><p>Jeg synes helt ærligt, at valg er hårdt. Jeg forstår ikke at sætte mig ind i politik, men jeg vil alligevel få mega dårlig samvittighed, hvis jeg ikke stemmer... Nårh ja, og kommunalvalg er sgu da endnu værre, jeg aner ikke engang hvem min borgmester er. Jeg er doomed!!! <br> Hvad med jer? Er i skarpe i politik? For så kunne jeg sgu nok godt bruge et råd eller to..<br>Tune ind i debatten (y)</p></div>
+			</div>
+			<div class="col-8-12">
+				<div id="blog2" class="opslag">
+					<h3>Alle unges opråb: Hvornår kan vi stemme online?</h3>
+					<p>Hvis i gerne vil have, at vi skal stemme, hvorfor hjælper i os så ikke lidt? Jeg har altid fået at vide, at det er supervigtigt at stemme, og det synes jeg egentligt også, det er, men alligevel stemte jeg ikke ved sidste kommunalvalg. For det første var jeg lige flyttet hjemmefra, fra Jylland til Sjælland, og jeg vidste overhovedet ikke hvor jeg skulle tage hen for at stemme, jeg vidste sådan set heller ikke hvem jeg skulle stemme på, men det er en anden sag. Hvis jeg kunne stemme hjemmefra, på min telefon eller computer, så havde jeg helt sikkert fået det gjort. Så kooooom nu, vi vil gerne stemme, men vil i hjælpe os???? Det er meget muligt, at der er en eller tyve, der nu sidder og tænker; "Jaja, tag dig nu sammen, og lad være med at være doven." og der må jeg bare sige, jeg er nok ikke den eneste, der vælger ikke at stemme af en eller anden latterligt grund - ergo er jeg ikke alene, ergo bør man kigge på problemet, og bum jeg har givet jer løsningen helt gratis; sørg for at vi kan stemme online.</p>
+				</div>
+			</div>
+			
+			
+			
+			<div class="col-4-12"><div id="blog3" class="opslag"><img alt="meme" src="img/memes/meme1.jpg"></div></div>
+			<div class="col-4-12"><div id="blog4" class="opslag"><img alt="meme" src="img/memes/meme2.jpg"></div></div>
+			<div class="col-4-12"><div id="blog5" class="opslag"><img alt="meme" src="img/memes/meme3.jpg"></div></div>
+			
+			
+			
+			<div class="col-9-12"><div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:640px; height:640px">
+		<canvas id="canvas" width="640" height="640" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:640px; height:640px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div></div></div>
+		
+			<div class="col-3-12"><div id="blog6" class="opslag"><h3>Politiker-stilen</h3><p>Jeg tester i denne uge politiker stilen - Ergo afprøver jeg alt fra oversized suit med det brede seriøse slips til det stramme figursyede business/bitch slapping suit. Følg med - billeder kommer op i løbet af ugen, stem om hvad, der er bedst og jeg tager det på, når jeg skal stemme til kommunalvalget. Eller kom med andre gode foreslag til, hvad jeg skal bevæge mig ud i? Hvad tager du på til kommunalvalget? Jeg udfordrer dig til at gå all in på fantasien. PS jeg havde kokostume på til sidste valg, og den gik rent ind på valgstedet, hehe ;-)</p></div></div>
+			
+			<div class="col-4-12">
+				<div id="blog7" class="opslag"><h3>Valgaften = festaften</h3><p>Hmm, eller det er i hvert fald en god anledning til at holde en fest, right?<br><br>#stemmerforøl</p></div>
+			</div>
+			<div class="col-8-12">
+				<div id="blog8" class="opslag">
+					<h3>Hvorfor føler jeg, at kommunalvalg er som musikkens svar på schlager?</h3>
+					<p>lidt outdated, ikke noget man gider at høre ret længe om, og hvis man så alligevel høre om det, så går der kun 10 sekunder, og så står jeg og drømmer om hvordan det erat være rig, eller hvad jeg skal have til aftensmad.</p>
+				</div>
+			</div>
+			
+			<div class="col-1-1"><div></div></div>
+	</div>
+		
+		
+		
+
+				<div class="col-3-12"><div class="blog-oversigt">
+			<h3>Blog oversigt</h3>
+			<ul>
+				<li><a href="#">Valgfest? Hvorfor ikke?</a></li>
+				<li><a href="#">De sjoveste valgkampagner</a></li>
+				<li><a href="#">De sjoveste partinavne</a></li>
+				<li><a href="#">Hvornår kan vi stemme online?</a></li>
+				<li><a href="#">Sofavælger?</a></li>
+				<li><a href="#">Ved du heller ikke en skid om politik?</a></li>
+				<li><a href="#">Valgdag</a></li>
+				<li><a href="#">Hvad er det med bolscher på valgsteder?</a></li>
+				<li><a href="#">Min bedste valgmakker</a></li>
+				<li><a href="#">Jeg vil gerne stemme, men...</a></li>
+				<li><a href="#">Valgmad</a></li>
+				<li><a href="#">Bedste valgsuits</a></li>
+				<li><a href="#">Valgfest? Hvorfor ikke?</a></li>
+				<li><a href="#">De sjoveste valgkampagner</a></li>
+				<li><a href="#">Hvornår kan vi stemme online?</a></li>
+				<li><a href="#">Sofavælger?</a></li>
+				<li><a href="#">Ved du heller ikke en skid om politik?</a></li>
+				<li><a href="#">Valgdag</a></li>
+				<li><a href="#">Hvad er det med bolscher på valgsteder?</a></li>
+				<li><a href="#">Min bedste valgmakker</a></li>
+				<li><a href="#">Jeg vil gerne stemme, men...</a></li>
+				<li><a href="#">Valgmad</a></li>
+				<li><a href="#">Bedste valgsuits</a></li>
+				<li><a href="#">Valgfest? Hvorfor ikke?</a></li>
+				<li><a href="#">De sjoveste valgkampagner</a></li>
+				<li><a href="#">Hvornår kan vi stemme online?</a></li>
+				<li><a href="#">Sofavælger?</a></li>
+				<li><a href="#">Ved du heller ikke en skid om politik?</a></li>
+				<li><a href="#">Valgdag</a></li>
+				<li><a href="#">Hvad er det med bolscher på valgsteder?</a></li>
+				<li><a href="#">Min bedste valgmakker</a></li>
+				<li><a href="#">Jeg vil gerne stemme, men...</a></li>
+				<li><a href="#">Valgmad</a></li>
+				<li><a href="#">Bedste valgsuits</a></li>
+				<li><a href="#">Valgfest? Hvorfor ikke?</a></li>
+				<li><a href="#">De sjoveste valgkampagner</a></li>
+				<li><a href="#">Hvornår kan vi stemme online?</a></li>
+				<li><a href="#">Sofavælger?</a></li>
+				<li><a href="#">Ved du heller ikke en skid om politik?</a></li>
+				<li><a href="#">Valgdag</a></li>
+				<li><a href="#">Hvad er det med bolscher på valgsteder?</a></li>
+				<li><a href="#">Min bedste valgmakker</a></li>
+				<li><a href="#">Jeg vil gerne stemme, men...</a></li>
+				<li><a href="#">Valgmad</a></li>
+				<li><a href="#">Bedste valgsuits</a></li>
+				<li><a href="#">Valgdag</a></li>
+				<li><a href="#">Hvad er det med bolscher på valgsteder?</a></li>
+				<li><a href="#">Min bedste valgmakker</a></li>
+				<li><a href="#">Jeg vil gerne stemme, men...</a></li>
+				<li><a href="#">Valgmad</a></li>
+				<li><a href="#">Bedste valgsuits</a></li>
+			</ul>
+			</div></div>
+
+		
+
+	</div>
+	<div class="footer">
+			<img alt="sponsor" src="img/sponsor/lorry.png">
+			<img alt="sponsor" src="img/sponsor/midt.png">
+			<img alt="sponsor" src="img/sponsor/oj.png">
+			<img alt="sponsor" src="img/sponsor/bornholm.jpg">
+			<img alt="sponsor" src="img/sponsor/ost.jpg">
+			<img alt="sponsor" src="img/sponsor/nord.png">
+			<img alt="sponsor" src="img/sponsor/fyn.png">
+			<img alt="sponsor" src="img/sponsor/syd.png">
+	</div>
+
+</body>
+</html>

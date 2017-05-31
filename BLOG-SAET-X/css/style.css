@@ -1,0 +1,825 @@
+/* Scss Document 
+Her samler vi alle vores stylesheets */
+/* Scss Document 
+Browser Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*
+  Simple Grid
+  Project Page - http://thisisdallas.github.com/Simple-Grid/
+  Author - Dallas Bass
+  Site - http://dallasbass.com
+*/
+[class*='grid'],
+[class*='col-'],
+[class*='mobile-'],
+.grid:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* [...] er en attribute selector */
+[class*='col-'] {
+  float: left;
+  min-height: 1px;
+  padding-right: 10px;
+  /* column-space (gutter) */
+  margin-bottom: 10px;
+  /* margin under alle col diverne */ }
+
+[class*='col-'] [class*='col-']:last-child {
+  padding-right: 0; }
+
+.grid {
+  width: 100%;
+  max-width: 1240px;
+  min-width: 748px;
+  /* when using padded grid on ipad in portrait mode, width should be viewport-width - padding = (768 - 20) = 748. actually, it should be even smaller to allow for padding of grid containing element */
+  margin: 0 auto;
+  overflow: hidden; }
+
+.grid:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.grid-pad {
+  padding-top: 10px;
+  padding-left: 10px;
+  /* grid-space to left */
+  padding-right: 0;
+  /* grid-space to right: (grid-space-left - column-space) e.g. 20px-20px=0 */ }
+
+.push-right {
+  float: right; }
+
+/* Content Columns */
+.col-1-1 {
+  width: 100%; }
+
+.col-2-3, .col-8-12 {
+  width: 66.66%; }
+
+.col-1-2, .col-6-12 {
+  width: 50%; }
+
+.col-1-3, .col-4-12 {
+  width: 33.33%; }
+
+.col-1-4, .col-3-12 {
+  width: 25%; }
+
+.col-1-5 {
+  width: 20%; }
+
+.col-1-6, .col-2-12 {
+  width: 16.667%; }
+
+.col-1-7 {
+  width: 14.28%; }
+
+.col-1-8 {
+  width: 12.5%; }
+
+.col-1-9 {
+  width: 11.1%; }
+
+.col-1-10 {
+  width: 10%; }
+
+.col-1-11 {
+  width: 9.09%; }
+
+.col-1-12 {
+  width: 8.33%; }
+
+/* Layout Columns */
+.col-11-12 {
+  width: 91.66%; }
+
+.col-10-12 {
+  width: 83.333%; }
+
+.col-9-12 {
+  width: 75%; }
+
+.col-5-12 {
+  width: 41.66%; }
+
+.col-7-12 {
+  width: 58.33%; }
+
+/* Pushing blocks */
+.push-2-3, .push-8-12 {
+  margin-left: 66.66%; }
+
+.push-1-2, .push-6-12 {
+  margin-left: 50%; }
+
+.push-1-3, .push-4-12 {
+  margin-left: 33.33%; }
+
+.push-1-4, .push-3-12 {
+  margin-left: 25%; }
+
+.push-1-5 {
+  margin-left: 20%; }
+
+.push-1-6, .push-2-12 {
+  margin-left: 16.667%; }
+
+.push-1-7 {
+  margin-left: 14.28%; }
+
+.push-1-8 {
+  margin-left: 12.5%; }
+
+.push-1-9 {
+  margin-left: 11.1%; }
+
+.push-1-10 {
+  margin-left: 10%; }
+
+.push-1-11 {
+  margin-left: 9.09%; }
+
+.push-1-12 {
+  margin-left: 8.33%; }
+
+@media handheld, only screen and (max-width: 767px) {
+  .grid {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 20px;
+    /* grid-space to left */
+    padding-right: 10px;
+    /* grid-space to right: (grid-space-left - column-space) e.g. 20px-10px=10px */ }
+
+  [class*='col-'] {
+    width: auto;
+    float: none;
+    margin: 10px 0;
+    padding-left: 0;
+    padding-right: 10px;
+    /* column-space */ }
+
+  [class*='col-'] [class*='col-'] {
+    padding-right: 0; }
+
+  /* Mobile Layout */
+  [class*='mobile-col-'] {
+    float: left;
+    margin: 0 0 10px;
+    padding-left: 0;
+    padding-right: 10px;
+    /* column-space */
+    padding-bottom: 0; }
+
+  .mobile-col-1-1 {
+    width: 100%; }
+
+  .mobile-col-2-3, .mobile-col-8-12 {
+    width: 66.66%; }
+
+  .mobile-col-1-2, .mobile-col-6-12 {
+    width: 50%; }
+
+  .mobile-col-1-3, .mobile-col-4-12 {
+    width: 33.33%; }
+
+  .mobile-col-1-4, .mobile-col-3-12 {
+    width: 25%; }
+
+  .mobile-col-1-5 {
+    width: 20%; }
+
+  .mobile-col-1-6, .mobile-col-2-12 {
+    width: 16.667%; }
+
+  .mobile-col-1-7 {
+    width: 14.28%; }
+
+  .mobile-col-1-8 {
+    width: 12.5%; }
+
+  .mobile-col-1-9 {
+    width: 11.1%; }
+
+  .mobile-col-1-10 {
+    width: 10%; }
+
+  .mobile-col-1-11 {
+    width: 9.09%; }
+
+  .mobile-col-1-12 {
+    width: 8.33%; }
+
+  /* Layout Columns */
+  .mobile-col-11-12 {
+    width: 91.66%; }
+
+  .mobile-col-10-12 {
+    width: 83.333%; }
+
+  .mobile-col-9-12 {
+    width: 75%; }
+
+  .mobile-col-5-12 {
+    width: 41.66%; }
+
+  .mobile-col-7-12 {
+    width: 58.33%; }
+
+  .hide-on-mobile {
+    display: none !important;
+    width: 0;
+    height: 0; } }
+/* Scss Document */
+h1 {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #292929; }
+
+h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 10px; }
+  h2#nominer {
+    font-size: 4em;
+    text-align: center;
+    line-height: 190px;
+    color: #343434; }
+    h2#nominer:hover {
+      font-size: 4.3em; }
+
+h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 20px 10px 10px;
+  color: #292929; }
+
+h4 {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 10px 20px 0;
+  color: #DD871C; }
+
+p {
+  padding: 20px;
+  line-height: 25px; }
+
+a {
+  text-decoration: none;
+  color: #292929; }
+
+body {
+  font-family: helevtica, arial, sans-seif;
+  font-size: 0.9em;
+  color: #292929;
+  background: #F1F1F1; }
+
+#search {
+  position: absolute;
+  top: 40px;
+  right: 30px; }
+
+.logo {
+  height: 50px; }
+  .logo img {
+    height: 50px; }
+  .logo a {
+    text-decoration: none;
+    padding: 10px;
+    line-height: 50px;
+    color: #979797; }
+    .logo a.selected {
+      color: #292929; }
+    .logo a:hover {
+      color: #292929; }
+  .logo input {
+    height: 20px;
+    width: 150px; }
+
+.header {
+  height: 350px;
+  margin: 0;
+  background-image: url(../img/saetX.png);
+  background-size: cover; }
+  .header div {
+    display: none; }
+    .header div h2 {
+      font-size: 4em;
+      padding: 105px 20px 0;
+      font-weight: bold;
+      color: #292929;
+      line-height: 75px; }
+  .header:hover div {
+    display: block; }
+
+.nav {
+  height: 50px; }
+  .nav a {
+    text-decoration: none;
+    padding: 10px;
+    line-height: 50px;
+    color: #979797; }
+    .nav a.selected {
+      color: #292929; }
+    .nav a:hover {
+      color: #292929; }
+  .nav img {
+    height: 37px; }
+    .nav img#ig {
+      position: absolute;
+      right: 100px;
+      top: 435px;
+      filter: grayscale(45%); }
+      .nav img#ig:hover {
+        filter: grayscale(0); }
+    .nav img#fb {
+      position: absolute;
+      right: 50px;
+      top: 435px;
+      filter: grayscale(45%); }
+      .nav img#fb:hover {
+        filter: grayscale(0); }
+
+.headline {
+  margin-top: 20px; }
+
+.box1 {
+  height: 400px;
+  background: #ddd; }
+  .box1 h2 {
+    font-size: 3.5em;
+    color: #DD871C;
+    padding: 20px; }
+  .box1 p {
+    font-size: 1.3em;
+    color: #444;
+    line-height: 30px; }
+    .box1 p b {
+      color: #DD871C;
+      font-weight: bold; }
+
+.box-a, .box-b, .box-c, .box-d {
+  height: 195px; }
+
+.box-a {
+  background: #292929; }
+  .box-a p {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 85px 0 0;
+    font-weight: bold; }
+    .box-a p:hover {
+      font-size: 2em; }
+
+.box-b {
+  background-image: url(../img/hvad-gor-min-kommune-for-mig.jpg);
+  background-size: cover;
+  filter: grayscale(50%); }
+  .box-b p {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 75px 0 0;
+    font-weight: bold; }
+    .box-b p:hover {
+      font-size: 2em; }
+
+.box-c {
+  background-image: url(../img/test-dig-selv.jpg);
+  background-size: cover; }
+  .box-c p {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 85px 0 0;
+    font-weight: bold; }
+    .box-c p:hover {
+      font-size: 2em; }
+
+.box-d {
+  background-image: url(../img/sofavaelger.jpg);
+  background-size: cover; }
+  .box-d p {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 85px 0 0;
+    font-weight: bold; }
+    .box-d p:hover {
+      font-size: 2em; }
+
+.box-e, .box-f, .box-g {
+  height: 300px;
+  background: #5cbcab; }
+
+.box-f img {
+  width: 100%;
+  height: 252px;
+  display: block;
+  margin: 0 auto; }
+
+.box-h, .box-j {
+  height: auto;
+  background: #ddd; }
+
+.box-i {
+  background: #ddd;
+  height: 243px;
+  margin-top: 10px; }
+
+.nominer {
+  background: #DD871C;
+  height: 200px; }
+
+.footer {
+  width: 100%;
+  margin: 50px 0 0 0;
+  height: 200px;
+  background: #5cbcab; }
+  .footer img {
+    height: 45px;
+    padding: 25px;
+    margin-top: 90px;
+    filter: grayscale(50%); }
+
+.nav1 {
+  height: 80px;
+  background: #5cbcab;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1; }
+  .nav1 a {
+    text-decoration: none;
+    padding: 10px;
+    line-height: 80px;
+    color: #DFDFDF; }
+    .nav1 a.selected {
+      color: #292929; }
+    .nav1 a:hover {
+      color: #292929; }
+  .nav1 img {
+    height: 37px; }
+    .nav1 img#logo {
+      height: 60px;
+      margin: 0 60px;
+      padding: 5px 0 0; }
+    .nav1 img#ig {
+      position: absolute;
+      right: 100px;
+      top: 35px;
+      filter: grayscale(35%); }
+      .nav1 img#ig:hover {
+        filter: grayscale(0);
+        height: 40px; }
+    .nav1 img#fb {
+      position: absolute;
+      right: 50px;
+      top: 35px;
+      filter: grayscale(35%); }
+      .nav1 img#fb:hover {
+        filter: grayscale(0);
+        height: 40px; }
+  .nav1 input {
+    margin-left: 65px;
+    height: 30px;
+    width: 180px;
+    background: #5FC9B6;
+    color: #292929;
+    border: none; }
+
+#mest-pop {
+  margin-top: 110px; }
+
+.bib {
+  height: 470px;
+  background: #ddd; }
+  .bib img {
+    width: 100%;
+    max-height: 300px; }
+
+.input-stem {
+  font-size: 1em;
+  height: 30px;
+  border-radius: 5px; }
+
+.stemmer {
+  text-align: right;
+  font-size: 0.7em;
+  font-weight: bold;
+  color: #DD871C;
+  margin: 0;
+  padding: 0 20px; }
+
+.kommune {
+  height: 70px;
+  background: #DD871C;
+  background-size: cover; }
+  .kommune p {
+    font-size: 1.3em;
+    text-align: center;
+    padding: 20px 0 40px; }
+    .kommune p:hover {
+      font-size: 1.4em; }
+
+.box-a-blog, .box-b-blog, .box-c-blog, .box-d-blog {
+  background: #DD871C;
+  height: 195px; }
+  .box-a-blog p, .box-b-blog p, .box-c-blog p, .box-d-blog p {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold; }
+
+.box-a-blog {
+  background: #292929; }
+
+.blog-oversigt {
+  background: #979797;
+  height: 1520px; }
+  .blog-oversigt li a {
+    color: #292929;
+    padding: 20px;
+    line-height: 25px; }
+    .blog-oversigt li a:hover {
+      color: #fff; }
+
+.opslag {
+  background: #ddd; }
+
+#blog1, #blog2 {
+  height: 400px; }
+
+#blog3, #blog4, #blog5 {
+  height: 250px; }
+
+#blog3 img, #blog4 img, #blog5 img {
+  height: 250px;
+  width: 100%; }
+
+#blog4 {
+  background-image: url(../img/memes/meme2.jpg); }
+
+#blog5 {
+  background-image: url(../img/memes/meme3.jpg); }
+
+#blog6 {
+  height: 640px;
+  background: none; }
+
+#blog7, #blog8 {
+  height: 200px; }
+
+#skriv-debat {
+  font-size: 1em;
+  background: #fff;
+  color: #292929;
+  margin: 0 0 20px;
+  border: none;
+  border-radius: 5px; }
+
+.debat-submit {
+  margin-left: 60px; }
+
+.debat {
+  background: #979797;
+  margin-bottom: 10px; }
+
+.debat-opslag {
+  height: auto;
+  background: #ddd;
+  margin-bottom: 10px; }
+
+.debat-forfatter {
+  font-size: 0.75em;
+  padding: 0 20px; }
+
+.debat-oversigt {
+  background: #979797;
+  height: 450px; }
+  .debat-oversigt li a {
+    color: #292929;
+    padding: 20px;
+    line-height: 25px; }
+    .debat-oversigt li a:hover {
+      color: #fff; }
+
+.debat-reklamer {
+  height: 690px;
+  background-image: url(../img/kampagner.jpg);
+  background-size: contain; }
+
+#debat-kommentar {
+  background: #fff;
+  float: right;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-bottom: 10px; }
+
+.om {
+  background: #ddd;
+  height: auto; }
+  .om ul li {
+    line-height: 22px;
+    list-style: circle;
+    margin-left: 40px;
+    padding-right: 10px; }
+
+.kontakt {
+  background: #DD871C;
+  height: 200px; }
+  .kontakt #kontaktinfo {
+    font-size: 4em;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 40px; }
+
+.kommune-intro {
+  height: 450px;
+  background: #ddd; }
+
+.kandidat {
+  height: 370px;
+  background: #ddd; }
+  .kandidat h3 {
+    text-align: center; }
+  .kandidat img {
+    display: block;
+    margin: 0 auto; }
+  .kandidat b {
+    padding: 10px 10px 10px 25px;
+    line-height: 18px;
+    font-weight: bold;
+    color: #DD871C; }
+
+.kandidat-spacer {
+  height: 370px; }
+
+.parti {
+  height: 370px;
+  background: #fff; }
+
+#albertslund-borgmester {
+  height: 298px; }
+
+.albertslund {
+  width: 100%;
+  background-image: url(../img/albertslund.jpg);
+  background-size: cover; }
+
+.inputBox {
+  font-size: 1em;
+  width: 300px;
+  height: 30px;
+  margin: 10px 0 5px 20px;
+  border-radius: 5px; }
+
+.button {
+  height: 30px;
+  width: 80px;
+  background: #DD871C;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em; }
+
+.spacer {
+  height: 100px; }
+
+.questionOne, .questionTwo, .questionThree, .questionFour {
+  margin-top: 10px;
+  margin-bottom: 0;
+  height: auto;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #DD871C; }
+  .questionOne p, .questionTwo p, .questionThree p, .questionFour p {
+    color: #292929; }
+
+.questionDropOne, .questionDropTwo, .questionDropThree, .questionDropFour {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: auto;
+  display: none;
+  padding: 15px;
+  background-color: #ddd;
+  border-radius: 0 0 5px 5px; }
+
+.submit1, .submit2, .submit3, .submit4 {
+  margin: 8px; }
+
+.questionOne.expanded .questionDropOne {
+  display: block; }
+
+.questionTwo.expanded .questionDropTwo {
+  display: block; }
+
+.questionThree.expanded .questionDropThree {
+  display: block; }
+
+.questionFour.expanded .questionDropFour {
+  display: block; }
+
+.questionFive {
+  margin-bottom: 0;
+  height: 80px;
+  padding: 15px;
+  float: right; }
+  .questionFive .resultButton {
+    float: left;
+    height: 30px;
+    font-size: 0.9em;
+    background: #979797; }
+
+.questionSix {
+  margin-bottom: 0;
+  height: 80px;
+  padding: 15px;
+  float: left;
+  clear: left; }
+  .questionSix .backButton {
+    float: right;
+    margin-right: 16px;
+    height: 30px;
+    font-size: 0.9em;
+    background: #979797; }
+
+.resultButton {
+  float: right; }
+
+#resultat-pic {
+  height: 300px; }
+
+.tryAgain {
+  text-align: center;
+  font-size: 1.5em;
+  background: #DD871C;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin: 0 auto;
+  display: block;
+  width: 200px; }
+
+/* Scss Document 
+Tablet */
+@media screen and (min-width: 767px) and (max-width: 1000px) {
+  .col-4-12 {
+    width: 50%; }
+
+  .push-1-12 {
+    margin-left: 25%; } }
