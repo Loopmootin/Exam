@@ -84,16 +84,24 @@ function handleComplete() {
 			</div>
 		</div>
 		<div class="col-1-1" id="mest-pop"><h2>Mest populære</h2></div>
-		<div class="col-6-12">
-			<div class="box1">
-			<h2>De sjoveste <br> (og mest latterlige) partinavne</h2>
-			<p>Vidste du, at du i 2013 kunne stemme på partiet Liste P.I.K, hvis motto lød; "stem med dit lem"?<br><br> <b>Happy voting (y)</b></p></div>
+		
+		<div class="col-7-12 ani-blog">
+			<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:600px; height:600px">
+				<canvas id="canvas" width="600" height="600" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+				<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:600px; height:600px; position: absolute; left: 0px; top: 0px; display: block;"></div>
+			</div>
 		</div>
-				
-		<div class="col-3-12"><div class="box-a-blog"><p>?</p></div></div>
-		<div class="col-3-12"><div class="box-b-blog"><img alt="meme" src="img/memes/nailed-it.png" height="195"></div></div>
-		<div class="col-3-12"><div class="box-c-blog"><img alt="meme" src="img/memes/meme4.jpg" height="195"></div></div>
-		<div class="col-3-12"><div class="box-d-blog"><p>Sofavælger?<br> Definition: "Jeg vælger at date min sofa resten af mit liv frem for at tage stilling til noget som helst i samfundet ;-)"</p></div></div>
+		<div class="col-5-12"><div class="box-a-blog"><h4>De sjoveste <br> (og mest latterlige) partinavne</h4>
+			<p>Vidste du, at du i 2013 kunne stemme på partiet Liste P.I.K, hvis motto lød; "stem med dit lem"?<br><b>Happy voting (y)</b></p></div></div>
+			
+		<div class="col-3-12">
+			<div class="box-b-blog"><img alt="meme" src="img/memes/meme5.jpg" width="300"></div>
+			<div class="box-b-blog"><h1>#sætX</h1></div>
+		</div>
+		
+		<div class="col-2-12"><div class="box-d-blog"><p>Sofavælger?<br><br> Definition: "Jeg vælger at date min sofa resten af mit liv frem for at tage stilling til noget som helst i samfundet ;-)"</p></div></div>
+		
+		<div class="col-1-1"><div class="nominer"><a href="bibliotek.html"><h2 id="nominer">DELTAG I VORES KONKURRENCER</h2></a></div></div>
 		
 		<div class="col-1-1"><h2><br>Alle blogopslag</h2></div>
 		
@@ -113,15 +121,10 @@ function handleComplete() {
 			<div class="col-4-12"><div id="blog3" class="opslag"><img alt="meme" src="img/memes/meme1.jpg"></div></div>
 			<div class="col-4-12"><div id="blog4" class="opslag"><img alt="meme" src="img/memes/meme2.jpg"></div></div>
 			<div class="col-4-12"><div id="blog5" class="opslag"><img alt="meme" src="img/memes/meme3.jpg"></div></div>
-			
-			
-			
-			<div class="col-9-12"><div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:640px; height:640px">
-		<canvas id="canvas" width="640" height="640" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:640px; height:640px; position: absolute; left: 0px; top: 0px; display: block;">
-		</div></div></div>
 		
-			<div class="col-3-12"><div id="blog6" class="opslag"><h3>Politiker-stilen</h3><p>Jeg tester i denne uge politiker stilen - Ergo afprøver jeg alt fra oversized suit med det brede seriøse slips til det stramme figursyede business/bitch slapping suit. Følg med - billeder kommer op i løbet af ugen, stem om hvad, der er bedst og jeg tager det på, når jeg skal stemme til kommunalvalget. Eller kom med andre gode foreslag til, hvad jeg skal bevæge mig ud i? Hvad tager du på til kommunalvalget? Jeg udfordrer dig til at gå all in på fantasien. PS jeg havde kokostume på til sidste valg, og den gik rent ind på valgstedet, hehe ;-)</p></div></div>
+			<div class="col-1-1"><div id="blog6" class="opslag"><h3>Politiker-stilen</h3><div class="col-5-12"><p>Jeg tester i denne uge politiker stilen - Ergo afprøver jeg alt fra oversized suit med det brede seriøse slips til det stramme figursyede business/bitch slapping suit. Følg med - billeder kommer op i løbet af ugen, stem om hvad, der er bedst og jeg tager det på, når jeg skal stemme til kommunalvalget. Eller kom med andre gode foreslag til, hvad jeg skal bevæge mig ud i? Hvad tager du på til kommunalvalget? <br><br> Jeg udfordrer dig til at gå all in på fantasien. <br><br>PS jeg havde kokostume på til sidste valg, og den gik rent ind på valgstedet, hehe ;-)</p></div>
+			<div class="col-7-12"><img src="img/memes/borgmester.png" alt="Borgmesterstilen"></div>
+			</div></div>
 			
 			<div class="col-4-12">
 				<div id="blog7" class="opslag"><h3>Valgaften = festaften</h3><p>Hmm, eller det er i hvert fald en god anledning til at holde en fest, right?<br><br>#stemmerforøl</p></div>
@@ -137,8 +140,6 @@ function handleComplete() {
 	</div>
 		
 		
-		
-
 				<div class="col-3-12"><div class="blog-oversigt">
 			<h3>Blog oversigt</h3>
 			<ul>
@@ -195,19 +196,23 @@ function handleComplete() {
 				<li><a href="#">Bedste valgsuits</a></li>
 			</ul>
 			</div></div>
+			
+			<div class="col-1-1"><div class="headline"><h2>Top 3 over bedste kampagner ved kommunalvalg</h2></div></div>
+		<div class="col-4-12"><div class="box-e">
+			<h3>Nr.1 Sydfyn-style</h3>
+			<iframe src="https://www.youtube.com/embed/sEbEXOrJFp8" allowfullscreen></iframe>
+		
+		</div></div>
+		<div class="col-4-12"><div class="box-f"><h3>Nr. 2 Hvad der sker i stemmebåsen...</h3><img src="img/stemmebaas.png" alt="Stemmebås"></div></div>
+		<div class="col-4-12"><div class="box-g"><h3>Nr. 3 En mand med cowboyhat</h3>
+			<iframe src="https://www.youtube.com/embed/Ofs-EawhUdw" allowfullscreen></iframe>
+		</div></div>
 
 		
 
 	</div>
 	<div class="footer">
-			<img alt="sponsor" src="img/sponsor/lorry.png">
-			<img alt="sponsor" src="img/sponsor/midt.png">
-			<img alt="sponsor" src="img/sponsor/oj.png">
-			<img alt="sponsor" src="img/sponsor/bornholm.jpg">
-			<img alt="sponsor" src="img/sponsor/ost.jpg">
-			<img alt="sponsor" src="img/sponsor/nord.png">
-			<img alt="sponsor" src="img/sponsor/fyn.png">
-			<img alt="sponsor" src="img/sponsor/syd.png">
+		<img alt="sponsor" src="img/sponsor.png">
 	</div>
 
 </body>

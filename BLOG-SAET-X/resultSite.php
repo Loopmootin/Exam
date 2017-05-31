@@ -41,15 +41,8 @@
 						
 		</div>	
 		<div class="footer">
-			<img alt="sponsor" src="img/sponsor/lorry.png">
-			<img alt="sponsor" src="img/sponsor/midt.png">
-			<img alt="sponsor" src="img/sponsor/oj.png">
-			<img alt="sponsor" src="img/sponsor/bornholm.jpg">
-			<img alt="sponsor" src="img/sponsor/ost.jpg">
-			<img alt="sponsor" src="img/sponsor/nord.png">
-			<img alt="sponsor" src="img/sponsor/fyn.png">
-			<img alt="sponsor" src="img/sponsor/syd.png">
-	</div>	
+			<img alt="sponsor" src="img/sponsor.png">
+	</div>
 	
 			
 	</body>
